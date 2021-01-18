@@ -438,6 +438,7 @@ setConstant name value (Context context) =
 
 
 addFunction : String -> (Context -> Input -> OutVal) -> Context -> Context
+--addFunction : String -> (Context -> Input -> Result String OutVal) -> Context -> Context
 addFunction name f (Context context) =
     Context
         { context

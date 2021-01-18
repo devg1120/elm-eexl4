@@ -88,6 +88,7 @@ errAnalysis source err =
 test_exprexec : String -> List (String, OutVal) 
                         -> List (String, List String) 
                         -> List (String, Context -> Input -> OutVal)
+--                        -> List (String, Context -> Input -> Result String OutVal)
                         -> ExprResult String OutVal (String, (Array.Array ArgValue))
 test_exprexec source add_const add_enum add_func =
     let
@@ -133,15 +134,17 @@ test_exprexec source add_const add_enum add_func =
                             , userEnv = Dict.empty
                             }
 
-                        userfunc : userenv -> Context -> String -> Array.Array ArgValue -> OutVal
+                        --userfunc : userenv -> Context -> String -> Array.Array ArgValue -> OutVal
+                        userfunc : userenv -> Context -> String -> Array.Array ArgValue -> Result String OutVal
                         userfunc userenv_ context_ funcname input_args =
-                            OString "OK"
+                            Err "OK"
 
                         ans =
                             evaluate userenv userfunc context expr
                     in
                     --Debug.toString ans
                     ans
+                    --(Ok ans)
     in
     result
 
