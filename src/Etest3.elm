@@ -1,6 +1,6 @@
 module Etest3 exposing (..)
 
-
+import Debug 
 import Array
 import Stack
 import Dict
@@ -14,6 +14,7 @@ import Test.Test01
 import Test.Test02 
 import Test.Test03 
 import Test.Test04 
+import Test.Test05 
 
 -------------------------------------
 type TestResult 
@@ -146,5 +147,10 @@ d2 = testx M_Log      Test.Test04.script
 d3 = testx M_Env      Test.Test04.script
 d4 = testx M_Context  Test.Test04.script
 
+e1 = testx M_Constant Test.Test05.script
+e2 = testx M_Log      Test.Test05.script
+e3 = testx M_Env      Test.Test05.script
+e4 = testx M_Context  Test.Test05.script
 
---a1 = testx M_Constant Test.Test01.script
+debug.log "DEBUG***" 
+
