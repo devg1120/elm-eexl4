@@ -152,5 +152,4 @@ e2 = testx M_Log      Test.Test05.script
 e3 = testx M_Env      Test.Test05.script
 e4 = testx M_Context  Test.Test05.script
 
-debug.log "DEBUG***" 
 
